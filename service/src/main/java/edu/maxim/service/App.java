@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import edu.maxim.service.entity.Castomer;
+import edu.maxim.service.util.OrderUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,5 +32,11 @@ public class App extends HttpServlet{
         String date = req.getParameter("date");
         LocalDate localDate = LocalDate.parse(date);
         Date dd = Date.valueOf(localDate);
+        DBConnect dbconnect = new DBConnect();
+
+        Castomer castomer = dbconnect.getCastomer(name);
+        if (castomer == null) {
+            dbconnect.saveCastomer(castomer, OrderUtil.parsOrders(packag, dd));
+        }
     }
 }

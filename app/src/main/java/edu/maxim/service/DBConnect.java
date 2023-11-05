@@ -13,8 +13,6 @@ import edu.maxim.service.util.SessionUtil;
 public class DBConnect {
 
 
-
-
     public Castomer getCastomer(String name) {
         Castomer castomer;
 
@@ -47,7 +45,6 @@ public class DBConnect {
 
             tx.commit();
         }
-
         return true;    
     }
 }

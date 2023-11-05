@@ -7,7 +7,11 @@ repositories {
 }
 
 dependencies {
+    //hibernate
     implementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
+    //jdbc connection
+    implementation 'org.postgresql:postgresql:42.6.0'
+
 
     //test
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
