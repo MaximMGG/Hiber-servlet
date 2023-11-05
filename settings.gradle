@@ -1,0 +1,3 @@
+rootProject.name = 'client-server-db'
+include('app')
+include('service')
