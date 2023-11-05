@@ -9,13 +9,13 @@
         <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">postgres</property>
-        <property name="dialect">org.hibernate.dialect.postgresqlDialect</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <property name="show_sql">true</property>
 
-        <property name="hbm2ddl.auto">create-drop</property>
+        <!-- <property name="hbm2ddl.auto">c</property> -->
 
         <mapping class="edu.maxim.service.entity.Castomer"/>
-        <mapping class="edu.maxim.service.entity.Order"/>
+        <mapping class="edu.maxim.service.entity.Orderer"/>
     </session-factory>
 </hibernate-configuration>

@@ -36,7 +36,10 @@ public class App extends HttpServlet{
 
         Castomer castomer = dbconnect.getCastomer(name);
         if (castomer == null) {
-            dbconnect.saveCastomer(castomer, OrderUtil.parsOrders(packag, dd));
+            castomer = new Castomer();
+            castomer.setName(name);
+            castomer.setOrders(OrderUtil.parsOrders(packag, dd, castomer));
+            dbconnect.saveCastomer(castomer);
         }
     }
 }

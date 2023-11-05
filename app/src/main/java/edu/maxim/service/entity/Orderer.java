@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Order {
+public class Orderer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,12 +23,12 @@ public class Order {
     private TypeOfProduct typeOfProduct;
 
     @ManyToOne
-    private Castomer castromer;
+    private Castomer castomer;
 
     @Column
     private Date date;
 
-    public Order() {}
+    public Orderer() {}
 
     public int getId() {
         return id;
@@ -54,12 +54,12 @@ public class Order {
         this.typeOfProduct = typeOfProduct;
     }
 
-    public Castomer getCastromer() {
-        return castromer;
+    public Castomer getCastomer() {
+        return castomer;
     }
 
-    public void setCastromer(Castomer castromer) {
-        this.castromer = castromer;
+    public void setCastomer(Castomer castromer) {
+        this.castomer = castromer;
     }
 
     public Date getDate() {
@@ -77,7 +77,7 @@ public class Order {
         result = prime * result + id;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((typeOfProduct == null) ? 0 : typeOfProduct.hashCode());
-        result = prime * result + ((castromer == null) ? 0 : castromer.hashCode());
+        result = prime * result + ((castomer == null) ? 0 : castomer.hashCode());
         result = prime * result + ((date == null) ? 0 : date.hashCode());
         return result;
     }
@@ -90,7 +90,7 @@ public class Order {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Order other = (Order) obj;
+        Orderer other = (Orderer) obj;
         if (id != other.id)
             return false;
         if (name == null) {
@@ -100,10 +100,10 @@ public class Order {
             return false;
         if (typeOfProduct != other.typeOfProduct)
             return false;
-        if (castromer == null) {
-            if (other.castromer != null)
+        if (castomer == null) {
+            if (other.castomer != null)
                 return false;
-        } else if (!castromer.equals(other.castromer))
+        } else if (!castomer.equals(other.castomer))
             return false;
         if (date == null) {
             if (other.date != null)
@@ -115,7 +115,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order [id=" + id + ", name=" + name + ", typeOfProduct=" + typeOfProduct + ", castromer=" + castromer
+        return "Order [id=" + id + ", name=" + name + ", typeOfProduct=" + typeOfProduct + ", castromer=" + castomer
                 + ", date=" + date + "]";
     }
 

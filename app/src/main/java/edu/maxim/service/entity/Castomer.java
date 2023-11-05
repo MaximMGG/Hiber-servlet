@@ -21,7 +21,7 @@ public class Castomer {
     private String name;
 
     @OneToMany(mappedBy = "castomer", cascade = CascadeType.ALL)
-    private List<Order> orders;
+    private List<Orderer> orders;
 
 
     public Castomer() {}
@@ -42,11 +42,11 @@ public class Castomer {
         this.name = name;
     }
 
-    public List<Order> getOrders() {
+    public List<Orderer> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(List<Orderer> orders) {
         this.orders = orders;
     }
 
