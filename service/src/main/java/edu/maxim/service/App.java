@@ -41,7 +41,7 @@ public class App extends HttpServlet{
             castomer.setName(name);
             castomer.setOrders(OrderUtil.parsOrders(packag, dd, castomer));
             dbconnect.saveCastomer(castomer);
+            req.getRequestDispatcher("/WEB-INF/jsp/success.jsp").forward(req, resp);;
         }
-        req.getRequestDispatcher("/WEB-INF/jsp/success.jsp").forward(req, resp);;
     }
 }
