@@ -35,11 +35,13 @@ public class App extends HttpServlet{
         DBConnect dbconnect = new DBConnect();
 
         Castomer castomer = dbconnect.getCastomer(name);
+
         if (castomer == null) {
             castomer = new Castomer();
             castomer.setName(name);
             castomer.setOrders(OrderUtil.parsOrders(packag, dd, castomer));
             dbconnect.saveCastomer(castomer);
         }
+        req.getRequestDispatcher("/WEB-INF/jsp/success.jsp").forward(req, resp);;
     }
 }
